@@ -13,43 +13,42 @@ const app = express();
 
 app.use(express.static('public'));
 app.use(express.json());
+app.post('/completion', async (req, res) => {
+  // get manipulated text from openai chat
+  let completion = null;
+  try {
+    const prompt = req.body.prompt;
+    const model = 'text-davinci-002';
+    const max_tokens = 100;
+    completion = await openai.createCompletion({ prompt, model, max_tokens });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ error: 'OpenAI createCompletion error' });
+  }
 
-app.post('/completion', (req, res) => {
-  
-  const prompt = req.body.prompt;
-  const model = 'text-davinci-002';
-
-  console.log('prompt',prompt)
-
-  // openai.createCompletion({ prompt, model }, function(error, response) {
-  //   console.log('create completion', response)
-  //   if (error) {
-  //     console.error(error);
-  //     return;
-  //   }
-
-  //   res.send(response.choices[0].text);
-  // });
-
-  const options = {
-    method: 'POST',
-    url: `https://api.openai.com/v1/models/${model}/completions`,
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    json: {
-      prompt: prompt,
-    },
-  };
-
-  request(options, function(error, response, body) {
-    if (error) {
-      console.error(error);
-      return;
+  // check if the choices property is defined and has at least one element
+  if (completion && completion.choices && completion.choices.length > 0) {
+    // check if the text property of the first choice is defined
+    if (completion.choices[0].text) {
+      // feed manipulated text from openai chat into openai image generation using dall-e
+      try {
+        const response = await openai.createImage({
+          prompt: completion.choices[0].text,
+          n: 1,
+          size: "1024x1024",
+        });
+        const image_url = response.data.data[0].url;
+        res.send(image_url); // return image to webpage for rendering
+      } catch (error) {
+        console.error(error);
+        res.status(500).send({ error: 'OpenAI createImage error' });
+      }
+    } else {
+      res.status(500).send({ error: 'First choice text is undefined' });
     }
-
-    res.send(body);
-  });
+  } else {
+    res.status(500).send({ error: 'Choices property is undefined or empty' });
+  }
 });
 
 app.listen(3000, () => {
