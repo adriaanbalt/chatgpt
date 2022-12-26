@@ -6,7 +6,6 @@ form.addEventListener('submit', (event) => {
 
   const prompt = document.getElementById('prompt').value;
   const url = `/completion`;
-    console.log('url,', url)
   const options = {
     method: 'POST',
     headers: {
