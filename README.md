@@ -13,3 +13,9 @@
 
 7. The text and image will be returned and displayed on the web page. W3Schools has a [tutorial on displaying data on a webpage with JavaScript](https://www.w3schools.com/js/js_display_data.asp) that may be helpful.
 ## modal: text-davinci-003
+
+
+## deps:
+- openai
+- express
+- dotenv
