@@ -18,6 +18,8 @@ form.addEventListener('submit', (event) => {
   fetch(url,options)
     .then((res) => res.text())
     .then((text) => {
-      responseDiv.textContent = text;
+      const res = JSON.parse(text);
+      responseText.textContent = res.text;
+      responseImage.src = res.image;
     });
 });
