@@ -37,8 +37,9 @@ app.post('/completion', async (req, res) => {
           n: 1,
           size: "1024x1024",
         });
-        const image_url = response.data.data[0].url;
-        res.send({text: completion.data.choices[0].text, image:image_url}); // return image to webpage for rendering
+        const text = completion.data.choices[0].text;
+        const image = response.data.data[0].url;
+        res.send({text, image}); // return image to webpage for rendering
       } catch (error) {
         console.error(error);
         res.status(500).send({ error: 'OpenAI createImage error' });
