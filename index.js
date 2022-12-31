@@ -18,9 +18,21 @@ app.post('/completion', async (req, res) => {
   try {
     const prompt = req.body.prompt;
     const model = 'text-davinci-003';
-    const max_tokens = 100;
+    const max_tokens = 150;
     const temperature = 0.9;
-    completion = await openai.createCompletion({ prompt, model, max_tokens, temperature });
+    const top_p = 1;
+    const frequency_penalty = 0;
+    const presence_penalty = 0.6;
+    const stop = [" Human:", " AI:"];
+    completion = await openai.createCompletion({ 
+      prompt,
+      model,
+      max_tokens,
+      temperature,
+      top_p,
+      frequency_penalty,
+      presence_penalty,
+      stop });
   } catch (error) {
     console.error(error);
     res.status(500).send({ error: 'OpenAI createCompletion error' });
