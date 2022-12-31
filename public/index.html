@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link src="styles.css"/>
+  </head>
+  <body>
+    <h2>What is this?</h2>
+    <p>Enter a prompt below to have interpreted by OpenAI ChatGPT and then use that interpretation to generate an image.</p>
+    <form id="form" action="/completion" method="post">
+      <input style="width: 100%" autofocus type="text" id="prompt" />
+      <button type="submit">Submit</button>
+    </form>
+    <div id="loader" class="hidden">
+      <div class="spinner"></div>
+      <p>Approx. 5-15 seconds</p>
+    </div>
+    <div id="list"></div>
+    <p id="load">Firebase SDK Loading&hellip;</p>
+    <script src="/client.js"></script>
+  </body>
+  <template id="template">
+    <div class="listItem">
+    </div>
+  </template>
+</html>
