@@ -1,3 +1,12 @@
+const functions = require("firebase-functions");
+
+// // Create and deploy your first functions
+// // https://firebase.google.com/docs/functions/get-started
+//
+// exports.helloWorld = functions.https.onRequest((request, response) => {
+//   functions.logger.info("Hello logs!", {structuredData: true});
+//   response.send("Hello from Firebase!");
+// });
 const { Configuration, OpenAIApi } = require("openai");
 const express = require('express');
 const dotenv = require('dotenv');
@@ -18,9 +27,21 @@ app.post('/completion', async (req, res) => {
   try {
     const prompt = req.body.prompt;
     const model = 'text-davinci-003';
-    const max_tokens = 100;
+    const max_tokens = 150;
     const temperature = 0.9;
-    completion = await openai.createCompletion({ prompt, model, max_tokens, temperature });
+    const top_p = 1;
+    const frequency_penalty = 0;
+    const presence_penalty = 0.6;
+    const stop = [" Human:", " AI:"];
+    completion = await openai.createCompletion({ 
+      prompt,
+      model,
+      max_tokens,
+      temperature,
+      top_p,
+      frequency_penalty,
+      presence_penalty,
+      stop });
   } catch (error) {
     console.error(error);
     res.status(500).send({ error: 'OpenAI createCompletion error' });
@@ -52,6 +73,8 @@ app.post('/completion', async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
-  console.log('Listening on port 3000');
-});
+// app.listen(3000, () => {
+//   console.log('Listening on port 3000');
+// });
+
+exports.app = functions.https.onRequest(app);

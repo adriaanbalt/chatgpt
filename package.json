@@ -1,7 +1,13 @@
+
 {
+  "name": "chat-w-balt",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions"
+  },
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "firebase-functions": "^4.1.1",
     "openai": "^3.1.0",
     "request": "^2.88.2"
   }

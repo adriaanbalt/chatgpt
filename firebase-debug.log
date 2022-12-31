@@ -1,0 +1,93 @@
+[debug] [2022-12-31T15:39:19.012Z] ----------------------------------------------------------------------
+[debug] [2022-12-31T15:39:19.014Z] Command:       /Users/adriaanbalt/.nvm/versions/node/v16.15.0/bin/node /Users/adriaanbalt/.nvm/versions/node/v16.15.0/bin/firebase emulators:start --only functions
+[debug] [2022-12-31T15:39:19.015Z] CLI Version:   11.19.0
+[debug] [2022-12-31T15:39:19.015Z] Platform:      darwin
+[debug] [2022-12-31T15:39:19.015Z] Node Version:  v16.15.0
+[debug] [2022-12-31T15:39:19.016Z] Time:          Sat Dec 31 2022 16:39:19 GMT+0100 (Central European Standard Time)
+[debug] [2022-12-31T15:39:19.016Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-31T15:39:19.098Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-31T15:39:19.098Z] > authorizing via signed-in user (adriaanbalt@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2022-12-31T15:39:19.631Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2022-12-31T15:39:19.632Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2022-12-31T15:39:19.641Z] [hub] writing locator at /var/folders/wd/dh740g914ps3gy18ybjsvg240000gn/T/hub-chat-w-balt.json
+[debug] [2022-12-31T15:39:20.012Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2022-12-31T15:39:20.013Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2022-12-31T15:39:20.013Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage\u001b[22m"}}
+[info] ✔  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2022-12-31T15:39:20.024Z] defaultcredentials: writing to file /Users/adriaanbalt/.config/firebase/adriaanbalt_gmail_com_application_default_credentials.json
+[debug] [2022-12-31T15:39:20.030Z] Setting GAC to /Users/adriaanbalt/.config/firebase/adriaanbalt_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/adriaanbalt/.config/firebase/adriaanbalt_gmail_com_application_default_credentials.json"}}
+[debug] [2022-12-31T15:39:20.032Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chat-w-balt/adminSdkConfig [none]
+[debug] [2022-12-31T15:39:20.415Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chat-w-balt/adminSdkConfig 200
+[debug] [2022-12-31T15:39:20.415Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chat-w-balt/adminSdkConfig {"projectId":"chat-w-balt","storageBucket":"chat-w-balt.appspot.com"}
+[info] i  ui: downloading ui-v1.11.1.zip... {"metadata":{"emulator":{"name":"ui"},"message":"downloading ui-v1.11.1.zip..."}}
+[debug] [2022-12-31T15:39:20.456Z] >>> [apiv2][query] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.11.1.zip 
+[debug] [2022-12-31T15:39:20.689Z] <<< [apiv2][status] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.11.1.zip 200
+[debug] [2022-12-31T15:39:20.689Z] <<< [apiv2][body] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.11.1.zip [stream]
+[info] i  ui: Removing outdated emulator files: ui-v1.7.0 {"metadata":{"emulator":{"name":"ui"},"message":"Removing outdated emulator files: ui-v1.7.0"}}
+[info] i  ui: Removing outdated emulator files: ui-v1.7.0.zip {"metadata":{"emulator":{"name":"ui"},"message":"Removing outdated emulator files: ui-v1.7.0.zip"}}
+[debug] [2022-12-31T15:39:23.316Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-12-31T15:39:23.317Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2022-12-31T15:39:23.317Z] Starting Emulator UI with command {"binary":"node","args":["/Users/adriaanbalt/.cache/firebase/emulators/ui-v1.11.1/server/server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/Users/adriaanbalt/.cache/firebase/emulators/ui-v1.11.1/server/server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2022-12-31T15:39:23.461Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2022-12-31T15:39:23.461Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] i  functions: Watching "/Users/adriaanbalt/PROJECTS/OPENAI/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/adriaanbalt/PROJECTS/OPENAI/functions\" for Cloud Functions..."}}
+[debug] [2022-12-31T15:39:23.590Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2022-12-31T15:39:24.779Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-12-31T15:39:24.780Z] Building nodejs source
+[debug] [2022-12-31T15:39:24.782Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-12-31T15:39:25.149Z] Serving at port 9005
+
+[debug] [2022-12-31T15:39:25.305Z] Got response from /__/functions.yaml {"endpoints":{"app":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"app"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-12-31T15:39:25.312Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: app. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: app."}}
+[info] ✔  functions[us-central1-app]: http function initialized (http://127.0.0.1:5001/chat-w-balt/us-central1/app). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/chat-w-balt/us-central1/app)."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
