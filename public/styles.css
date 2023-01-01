@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+
 @keyframes spin {
     0% {
       transform: rotate(0deg);
@@ -6,11 +8,23 @@
       transform: rotate(360deg);
     }
 }
+html {
+    background-color: #1f1f1f;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
 form {
+    text-align: center;
     margin: 16px;
 }
+input {
+    width: 50%;
+    background-color: #999;
+    color: #fff;
+}
 button {
-    margin: 16px;
+    margin: 16px auto;
+    display: block;
 }
 .image {
     width: 80%;
