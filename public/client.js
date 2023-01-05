@@ -29,7 +29,7 @@ form.addEventListener('submit', (event) => {
       element.innerHTML = `
         <div class="listItem">
           <h3 id="prompt">Prompt: ${prompt}</h3>
-          <p>Response: ${prompt}</p>
+          <p>Response: ${res.text}</p>
           <img class="image" src="${res.image}"></img>
         </div>
       `;
