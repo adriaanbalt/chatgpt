@@ -15,8 +15,9 @@ app.use(express.json());
 app.post('/completion', async (req, res) => {
   // get manipulated text from openai chat
   let completion = null;
+  const prompt = req.body.prompt;
+  let text, image;
   try {
-    const prompt = req.body.prompt;
     const model = 'text-davinci-003';
     const max_tokens = 150;
     const temperature = 0.9;
@@ -33,34 +34,30 @@ app.post('/completion', async (req, res) => {
       frequency_penalty,
       presence_penalty,
       stop });
+    text = completion.data.choices[0].text;
   } catch (error) {
     console.error(error);
     res.status(500).send({ error: 'OpenAI createCompletion error' });
   }
+  
+  try {
+    const response = await openai.createImage({
+      prompt,
+      n: 1,
+      size: "1024x1024",
+    });
+    image = response.data.data[0].url;
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ error: 'OpenAI createImage error' });
+  }
 
-  // check if the choices property is defined and has at least one element
-  if (completion && completion.data && completion.data.choices && completion.data.choices.length > 0) {
-    // check if the text property of the first choice is defined
-    if (completion.data.choices[0].text) {
-      // feed manipulated text from openai chat into openai image generation using dall-e
-      try {
-        const response = await openai.createImage({
-          prompt: completion.data.choices[0].text,
-          n: 1,
-          size: "1024x1024",
-        });
-        const text = completion.data.choices[0].text;
-        const image = response.data.data[0].url;
-        res.send({text, image}); // return image to webpage for rendering
-      } catch (error) {
-        console.error(error);
-        res.status(500).send({ error: 'OpenAI createImage error' });
-      }
-    } else {
-      res.status(500).send({ error: 'First choice text is undefined' });
-    }
-  } else {
-    res.status(500).send({ error: 'Choices property is undefined or empty' });
+  if ( text && image ) {
+    res.send({text, image});
+  } else if (text && !image) {
+    res.send({text});
+  } else if (image && !text) {
+    res.send({image});
   }
 });
 
