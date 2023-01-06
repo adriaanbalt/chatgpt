@@ -16,7 +16,11 @@ app.post('/completion', async (req, res) => {
   // get manipulated text from openai chat
   let completion = null;
   const prompt = req.body.prompt;
+<<<<<<< HEAD
   let text, images;
+=======
+  let text, image;
+>>>>>>> main
   try {
     const model = 'text-davinci-003';
     const max_tokens = 150;
