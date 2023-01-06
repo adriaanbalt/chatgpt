@@ -9,13 +9,13 @@
     }
 }
 html {
-    background-color: #f1f1f1;
-    color: #1f1f1f;
+    background-color: #1f1f1f;
+    color: #f1f1f1;
     font-family: 'Inter', sans-serif;
 }
 form {
     text-align: center;
-    margin: 16px;
+    margin: 12px;
 }
 input {
     width: 50%;
@@ -23,19 +23,23 @@ input {
     color: #fff;
 }
 button {
-    margin: 16px auto;
+    margin: 12px auto;
     display: block;
 }
+.images {
+    display: flex;
+    width: 75%;
+    margin: auto;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
 .image {
-    width: 80%;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    margin-left: 10%;
-    margin-right: 10%;
+    width: 49%;
+    margin: .1%
 }
 #loader {
     margin: auto;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 .spinner {
     margin: auto;

@@ -22,7 +22,7 @@ form.addEventListener('submit', (event) => {
       // reveal the loader
       loader.classList.add('hidden');
       const res = JSON.parse(text);
-      
+
       // clone the template element
       const element = template.content.cloneNode(true);
       // select the element in the template where the data should be inserted
@@ -30,7 +30,12 @@ form.addEventListener('submit', (event) => {
         <div class="listItem">
           <h3 id="prompt">Prompt: ${prompt}</h3>
           <p>Response: ${res.text}</p>
-          <img class="image" src="${res.image}"></img>
+          <div class="images">
+            <img class="image" src="${res.images[0]}"></img>
+            <img class="image" src="${res.images[1]}"></img>
+            <img class="image" src="${res.images[2]}"></img>
+            <img class="image" src="${res.images[3]}"></img>
+          </div>
         </div>
       `;
       // insert the cloned element into the list
