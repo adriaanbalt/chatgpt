@@ -16,11 +16,7 @@ app.post('/completion', async (req, res) => {
   // get manipulated text from openai chat
   let completion = null;
   const prompt = req.body.prompt;
-<<<<<<< Updated upstream
-  let text, image;
-=======
   let text, images;
->>>>>>> Stashed changes
   try {
     const model = 'text-davinci-003';
     const max_tokens = 150;
@@ -47,21 +43,21 @@ app.post('/completion', async (req, res) => {
   try {
     const response = await openai.createImage({
       prompt,
-      n: 1,
-      size: "1024x1024",
+      n: 4,
+      size: "512x512",
     });
-    image = response.data.data[0].url;
+    images = response.data.data.reduce((a,c) => [...a,c.url], []);
   } catch (error) {
     console.error(error);
     res.status(500).send({ error: 'OpenAI createImage error' });
   }
 
-  if ( text && image ) {
-    res.send({text, image});
-  } else if (text && !image) {
+  if ( text && images ) {
+    res.send({text, images});
+  } else if (text && !images) {
     res.send({text});
-  } else if (image && !text) {
-    res.send({image});
+  } else if (images && !text) {
+    res.send({images});
   }
 });
 
