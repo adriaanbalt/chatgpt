@@ -16,7 +16,11 @@ app.post('/completion', async (req, res) => {
   // get manipulated text from openai chat
   let completion = null;
   const prompt = req.body.prompt;
+<<<<<<< Updated upstream
   let text, image;
+=======
+  let text, images;
+>>>>>>> Stashed changes
   try {
     const model = 'text-davinci-003';
     const max_tokens = 150;
