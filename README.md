@@ -1,4 +1,4 @@
-# Chat GPT node js implementation
+# OpenAI Chat GPT & Dall-E NodeJS Express web page and web service
 
 
 - Javascript [here](https://github.com/adriaanbalt/chatgpt/blob/main/public/client.js)
