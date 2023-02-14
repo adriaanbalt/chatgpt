@@ -1,4 +1,19 @@
-# Create an image with an openai "chat" response based on a submitted prompt, on a website
+# Chat GPT node js implementation
+
+- Javascript [here](https://github.com/adriaanbalt/chatgpt/blob/main/public/client.js)
+- HTML & CSS [here](https://github.com/adriaanbalt/chatgpt/blob/main/public/index.html)
+- NodeJS [here](https://github.com/adriaanbalt/chatgpt/blob/main/index.js)
+- Express [here](https://github.com/adriaanbalt/chatgpt/blob/main/index.js#L11)
+- Chat GPT [here](https://github.com/adriaanbalt/chatgpt/blob/main/index.js#L28)
+- Dall-E [here](https://github.com/adriaanbalt/chatgpt/blob/main/index.js#L44)
+
+### Model: `text-davinci-003`
+
+## Summary:
+
+Creates an image with an openai "chat gpt " response based on a submitted prompt, on a website. 
+
+# Setup
 
 1. Create an account with OpenAI and generate an API key. You can find instructions for creating an account and generating an API key on the OpenAI website [here](https://beta.openai.com/signup/).
 
