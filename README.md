@@ -9,22 +9,24 @@
 
 ### Model: `text-davinci-003`
 
+### Setup
+
+1. Clone this repo
+2. Run `$ yarn` 
+3. Run `$ node index.js`
+4. Open browser to http://localhost:3000
+
 ## Summary:
 
-Creates an image with an openai "chat gpt " response based on a submitted prompt, on a website. 
+Creates a NodeJS Express web service that hosts both a webpage and API.
 
-# Setup
+1. The webpage includes an HTML file with an input field and submit button.  The input field is where the user can enter a custom pieces of text; their "prompt".
+2. When clicking the submit button, the input field's text value is sent to the NodeJS Express API ["/completion"](https://github.com/adriaanbalt/chatgpt/blob/main/index.js#L15) endpoint.  
+3. This endpoint receives the user's prompt and passes it into OpenAI npm module to generate both a Chat GPT response and an image based on the provided prompt.
+4. The text and image are then rendered below the input field on the HTML webpage.
 
-1. Create an account with OpenAI and generate an API key. You can find instructions for creating an account and generating an API key on the OpenAI website [here](https://beta.openai.com/signup/).
+# Requirements
+
+1. Create an account with OpenAI and generate an API key. You can find instructions for creating an account and generating an API key on the OpenAI website [here](https://beta.openai.com/signup/).  Once you have your API key create a `.env` file with `OPENAI_API_KEY=your-key-here` inside of it
 
 2. Use the OpenAI npm module to connect to the service. You can find documentation for the OpenAI npm module [here](https://www.npmjs.com/package/openai).
-
-3. Create a web server with a webpage that has a textbox and submit button. W3Schools has a [tutorial on creating a web server with Node.js](https://www.w3schools.com/nodejs/nodejs_http.asp) and a [tutorial on HTML forms](https://www.w3schools.com/html/html_forms.asp) that may be helpful.
-
-4. The web server will have an endpoint that receives a POST message with the text from the textbox as the prompt. MDN Web Docs has a [tutorial on creating a server-side script to handle HTTP POST requests](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/forms#Creating_server-side_scripts_to_handle_POST_requests).
-
-5. Send the prompt to the OpenAI createComplation function. You can find documentation for the createComplation function [here](https://beta.openai.com/docs/api-reference/completions/create).
-
-6. The prompt will also be used as the input for the createImage function, which uses "dall-e". You can find documentation for the createImage function [here](https://beta.openai.com/docs/api-reference/images/create).
-
-7. The text and image will be returned and displayed on the web page. W3Schools has a [tutorial on displaying data on a webpage with JavaScript](https://www.w3schools.com/js/js_display_data.asp) that may be helpful.
