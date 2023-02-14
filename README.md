@@ -1,5 +1,6 @@
 # Chat GPT node js implementation
 
+
 - Javascript [here](https://github.com/adriaanbalt/chatgpt/blob/main/public/client.js)
 - HTML & CSS [here](https://github.com/adriaanbalt/chatgpt/blob/main/public/index.html)
 - NodeJS [here](https://github.com/adriaanbalt/chatgpt/blob/main/index.js)
@@ -7,9 +8,12 @@
 - Chat GPT [here](https://github.com/adriaanbalt/chatgpt/blob/main/index.js#L28)
 - Dall-E [here](https://github.com/adriaanbalt/chatgpt/blob/main/index.js#L44)
 
-### Model: `text-davinci-003`
+## Example
+https://user-images.githubusercontent.com/146778/218798580-63e5f29d-f010-4ad7-9dbd-8ead4038a962.mov
 
-### Setup
+### Chat GPT Model: `text-davinci-003`
+
+## Setup
 
 1. Clone this repo
 2. Run `$ yarn` 
